@@ -98,7 +98,62 @@ def battle():
         else:
             print("Invalid choice.")
 
+def boss():
+    global hp, gold
+
+    enemy = "Dragon"
+
+    enemy_hp = mobs[enemy]["hp"]
+    enemy_maxhp = enemy_hp
+    enemy_atk = mobs[enemy]["at"]
+    reward = mobs[enemy]["go"]
+
+    print(f"\nA wild {enemy} appeared!")
+
+    while enemy_hp > 0 and hp > 0:
+
+        print("----------------")
+        print(enemy)
+        print(f"Enemy HP: {enemy_hp}/{enemy_maxhp}")
+        print(f"Your HP : {hp}/{maxhp}")
+        print("----------------")
+        print("1. Attack")
+        print("2. Run")
+
+        choice = input("> ")
+
+        if choice == "1":
+            damage = Str / 3
+            enemy_hp -= damage
+
+            print(f"You hit the {enemy} for {damage} damage!")
+
+            if enemy_hp <= 0:
+                print(f"You defeated the {enemy}!")
+                gold += reward
+                print(f"You gained {reward} Galactic Credit Standards!")
+                gold += reward
+                clearsceen()
+                break
+
+            hp -= enemy_atk
+            print(f"The {enemy} attacks for {enemy_atk} damage!")
+            clearsceen()
+            if hp <= 0:
+                print("You were defeated!")
+                quit()
+
+        elif choice == "2":
+           if random.randint(1, 100) >= 50:
+            print("You escaped!")
+            clearsceen()
+            break
+
+        else:
+            print("Invalid choice.")
+
 def shop():
+
     style()
     print("Welcome to the shop!")
     style()
@@ -409,6 +464,8 @@ while run:
         if step == 5:
             step = 0
             gold += 25
+        if totalstep == 200:
+            boss()
         style()
         print("LOCATION: " + biome[map[y][x]]["t"])
         style()
