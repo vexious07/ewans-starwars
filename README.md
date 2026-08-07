@@ -1,7 +1,9 @@
 This project is fun project between friends
 
 star wars game features
+
 completed:
+
 -Race options before game
 -Religious Options before game
 -Basic weapons early game (Low Force level and shitty blaster pistol)
