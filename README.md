@@ -1,4 +1,10 @@
-This project is fun project between friends
+This project is between friends
+
+main programer : vexious07
+
+narrative/game designer: 
+
+tester: 
 
 star wars game features
 
