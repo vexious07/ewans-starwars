@@ -1,6 +1,6 @@
 This project is an text based rpg
 
-inspired by the starwars univers
+inspired by the starwars universe
 
 main programer : vexious07
 
