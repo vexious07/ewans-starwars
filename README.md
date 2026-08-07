@@ -1,4 +1,5 @@
 This project is an text based rpg
+____________________________________________________________________________
 
 inspired by the starwars universe
 
@@ -7,6 +8,8 @@ main programer : vexious07
 narrative/game designer: 
 
 tester: 
+
+______________________________________________________________________________
 
 star wars game features
 
