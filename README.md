@@ -1,4 +1,6 @@
-This project is between friends
+This project is an text based rpg
+
+inspired by the starwars univers
 
 main programer : vexious07
 
