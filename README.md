@@ -13,6 +13,8 @@ ______________________________________________________________________________
 
 star wars game features
 
+______________________________________________________________________________
+
 completed:
 
 -Race options before game
@@ -39,6 +41,8 @@ completed:
 
 -level up system 1 for chest, 3 for fight and 5 for boss
 
+______________________________________________________________________________
+
 semi-completed:
 
 -compasses (25 credits)
@@ -47,6 +51,7 @@ semi-completed:
 
 -boss encounters
 
+______________________________________________________________________________
 
 un-started:
 
@@ -55,5 +60,7 @@ un-started:
 surprised attacks (other religions
 
 -crossroad interactions
+
+______________________________________________________________________________
 
 -fast travel
