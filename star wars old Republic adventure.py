@@ -14,7 +14,7 @@ in_battle = False
 faction = False
 totalstep = 0
 step = 0 
-
+level = 1
 
 hp = 100 
 maxhp = 100
@@ -79,6 +79,8 @@ def battle():
                 gold += reward
                 print(f"You gained {reward} Galactic Credit Standards!")
                 gold += reward
+                for x in range(0, 2):
+                    level_up()
                 clearsceen()
                 break
 
@@ -97,6 +99,29 @@ def battle():
 
         else:
             print("Invalid choice.")
+
+def level_up():
+    global level, Str, Dex, Def, Int, Cha, maxhp, maxmp
+
+    level += 1
+    Str += 3
+    Dex += 3
+    Def += 3
+    Int += 3
+    Cha += 3
+    maxhp += 10
+    maxmp += 10
+
+    print(f"\nCongratulations! You've reached level {level}!")
+    print("Your stats have increased:")
+    print(f"Strength: {Str}")
+    print(f"Dexterity: {Dex}")
+    print(f"Defense: {Def}")
+    print(f"Intelligence: {Int}")
+    print(f"Charisma: {Cha}")
+    print(f"Max HP: {maxhp}")
+    print(f"Max MP: {maxmp}")
+
 
 def boss():
     global hp, gold
@@ -133,6 +158,8 @@ def boss():
                 gold += reward
                 print(f"You gained {reward} Galactic Credit Standards!")
                 gold += reward
+                for x in range(0, 4):
+                    level_up()
                 clearsceen()
                 break
 
@@ -166,6 +193,20 @@ def shop():
         print(f"{index}. Buy {item['name']} ({item['price']} GCS)")
 
     print("4. Exit Shop")
+    buy_choice = input("> ")
+    if buy_choice in ["1", "2", "3"]:
+        item_index = int(buy_choice) - 1
+        if item_index < len(available_items):
+            item_name = available_items[item_index]
+            item = shop_items[item_name]
+            if gold >= item["price"]:
+                gold -= item["price"]
+                print(f"You bought {item['name']} for {item['price']} GCS.")
+            else:
+                print("You don't have enough Galactic Credit Standards.")
+    else:
+        print("Exiting the shop.")
+        play = True
 #        x = 0        x = 1        x = 2         x = 3          x = 4         x = 5             x = 6
 map = [["plains",    "plains",    "plains",     "plains",      "forest",     "mountains",         "cave",], # y = 0
        ["forest",    "forest",    "forest",     "forest",      "forest",     "hills",         "mountains",], # y = 1
@@ -471,6 +512,7 @@ while run:
         style()
         print("Goals: " + factionsgoals[chosenfaction]["goal"])
         print("Name: " + name)
+        print("Level: " + str(level))
         print("HP: " + str(hp) + "/" + str(maxhp))
         print("MP: " + str(mp) + "/" + str(maxmp) )
         print("Current Weapon: " + weapon)
